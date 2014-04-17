@@ -2,8 +2,8 @@
 Contributors: Techgasp
 Tags: wordpress, plugin, widget, shortcode, techgasp, google, analytic, analytics, google analytics, reports, monitor, statistic
 Requires at least: 3.5
-Tested up to: 3.8.1
-Stable tag: 4.3.6
+Tested up to: 3.9
+Stable tag: 4.3.7
 License: GPLv2 or later
 
 Google Analytics Master is the professional plugin to add Google Analytics tracking to your wordpress.
@@ -62,6 +62,9 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 
 
 == Changelog ==
+
+= 4.3.7 =
+* Wordpress 3.9 Ready
 
 = 4.3.6 =
 * Added automatic deletion of site_transient

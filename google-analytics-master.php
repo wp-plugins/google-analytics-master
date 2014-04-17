@@ -2,7 +2,7 @@
 /**
 Plugin Name: Google Analytics Master
 Plugin URI: http://wordpress.techgasp.com/google-analytics-master/
-Version: 4.3.6
+Version: 4.3.7
 Author: TechGasp
 Author URI: http://wordpress.techgasp.com
 Text Domain: google-analytics-master
@@ -29,9 +29,9 @@ if(!class_exists('google_analytics_master')) :
 ///////DEFINE ID//////
 define('GOOGLE_ANALYTICS_MASTER_ID', 'google-analytics-master');
 ///////DEFINE VERSION///////
-define( 'google_analytics_master_VERSION', '4.3.6' );
+define( 'google_analytics_master_VERSION', '4.3.7' );
 global $google_analytics_master_version, $google_analytics_master_name;
-$google_analytics_master_version = "4.3.6"; //for other pages
+$google_analytics_master_version = "4.3.7"; //for other pages
 $google_analytics_master_name = "Google Analytics Master"; //pretty name
 if( is_multisite() ) {
 update_site_option( 'google_analytics_master_installed_version', $google_analytics_master_version );
