@@ -3,7 +3,7 @@ Contributors: Techgasp
 Tags: wordpress, plugin, widget, shortcode, techgasp, google, analytic, analytics, google analytics, reports, monitor, statistic
 Requires at least: 3.5
 Tested up to: 3.9.1
-Stable tag: 4.3.7
+Stable tag: 4.3.8
 License: GPLv2 or later
 
 Google Analytics Master is the professional plugin to add Google Analytics tracking to your wordpress.
@@ -11,13 +11,15 @@ Google Analytics Master is the professional plugin to add Google Analytics track
 
 == Description ==
 
-Google Analytics Master allows you to quickly and easily add the Google Analytics tracking code to your wordpress website. There are plenty of plugins that do this but we decided to create a brand new plugin the TechGasp way.
+Google Analytics Master allows you to quickly and easily add the Google Analytics tracking code to your wordpress website and display user friendly statistics. There are plenty of plugins that do this but we decided to create a brand new plugin the TechGasp way.
 
 This a free plugin intended for professional websites where clean error free code and fast page load times are a must.
 
-Main features: Accepts the Traditional and the new Google Universal Analytics tracking code. Allows you to insert just the Tracking ID code or the Google full script tracking code (even customized), allows to insert the code in theme header or footer for perfect load times.
+Main tracking features: Accepts the Traditional and the new Google Universal Analytics tracking code. Allows you to insert just the Tracking ID code or the Google full script tracking code (even customized), allows to insert the code in theme header or footer for perfect load times.
 
-**The Google Statistics tracker for Wordpress. Let the numbers flow in**
+Main statistical features: Connects to Google Analytics to pull statistics from all your websites. Packed with 3 easy to use plugin statistical pages, almost no configuration. Quick Statistics Page, Last Week Statistics page, Today's Statistics Page. Also packed with a small administrator dashboard widget to display real-time visitors for any of your websites being monitored by google analytics.
+
+**The Google Analytics / Statistics tracker for Wordpress. Let the numbers flow in**
 
 IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 
@@ -55,13 +57,21 @@ IMPORTANT: Errors and conflicts free. NO JAVASCRIPT or AJAX
 
 == Screenshots ==
 
-1. Google Analytics in action
-2. Full Website Page load time with Google Analytics
-3. Google Analytics in theme body
-4. Google Analytics in theme footer
+1. Google Analytics Master Administrator Dashboard Widget - Real-Time Visitors
+2. Google Analytics Master Quick Statistics Page
+3. Google Analytics in action
+4. Full Website Page load time with Google Analytics
+5. Google Analytics in theme body
+6. Google Analytics in theme footer
 
 
 == Changelog ==
+
+= 4.3.8 =
+* Version 4.3.8 adds a bunch of real-time google analytics statistics views, charts and reports. The main objective is to grant any wordpress administrator detailed statistical information about their website with almost no configuration.
+* Added Statistics plugin page. Quick detailed overview, dashboard style information
+* Added Several Administrator Widgets that allow several types of google analytics statistics
+* Added real-time number of website visitors to wordpress top administrator bar.
 
 = 4.3.7 =
 * Wordpress 3.9 Ready

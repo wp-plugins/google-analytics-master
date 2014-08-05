@@ -2,7 +2,7 @@
 /**
 Plugin Name: Google Analytics Master
 Plugin URI: http://wordpress.techgasp.com/google-analytics-master/
-Version: 4.3.7
+Version: 4.3.8
 Author: TechGasp
 Author URI: http://wordpress.techgasp.com
 Text Domain: google-analytics-master
@@ -29,9 +29,9 @@ if(!class_exists('google_analytics_master')) :
 ///////DEFINE ID//////
 define('GOOGLE_ANALYTICS_MASTER_ID', 'google-analytics-master');
 ///////DEFINE VERSION///////
-define( 'google_analytics_master_VERSION', '4.3.7' );
+define( 'google_analytics_master_VERSION', '4.3.8' );
 global $google_analytics_master_version, $google_analytics_master_name;
-$google_analytics_master_version = "4.3.7"; //for other pages
+$google_analytics_master_version = "4.3.8"; //for other pages
 $google_analytics_master_name = "Google Analytics Master"; //pretty name
 if( is_multisite() ) {
 update_site_option( 'google_analytics_master_installed_version', $google_analytics_master_version );
@@ -45,10 +45,18 @@ update_option( 'google_analytics_master_name', $google_analytics_master_name );
 require_once( dirname( __FILE__ ) . '/includes/google-analytics-master-admin.php');
 // HOOK ADMIN SETTINGS
 require_once( dirname( __FILE__ ) . '/includes/google-analytics-master-admin-settings.php');
+// HOOK ADMIN STATISTICS QUICK
+require_once( dirname( __FILE__ ) . '/includes/google-analytics-master-admin-statistics-quick.php');
+// HOOK ADMIN STATISTICS INTERACTIVE
+require_once( dirname( __FILE__ ) . '/includes/google-analytics-master-admin-statistics-interactive.php');
+// HOOK ADMIN STATISTICS TODAY
+require_once( dirname( __FILE__ ) . '/includes/google-analytics-master-admin-statistics-today.php');
 // HOOK ADMIN UPDATER
 require_once( dirname( __FILE__ ) . '/includes/google-analytics-master-admin-updater.php');
 // HOOK ANALYTICS ACTIVE
 require_once( dirname( __FILE__ ) . '/includes/google-analytics-master-active.php');
+// HOOK DASHBOARD WIDGET SMALL
+require_once( dirname( __FILE__ ) . '/includes/google-analytics-master-widget-dashboard-small.php');
 
 class google_analytics_master{
 //REGISTER PLUGIN
@@ -106,12 +114,25 @@ $techgasp_updater_info3 = ' <a href="admin.php?page=google-analytics-master-admi
 $techgasp_updater_icon = plugins_url('images/techgasp-updater-icon.png', __FILE__);
 echo '<br><div style="width:28px; vertical-align:middle; float:left;"><img src='.$techgasp_updater_icon.'></div><b>'.$techgasp_updater_info1.'</b>'.$techgasp_updater_info2.$techgasp_updater_info3;
 }
+
+//DASHBOAD WIDGET, AND REQUIRE ONCE FILE
+public static function google_analytics_master_add_dashboard_widget() {
+global $google_analytics_master_custom_dashboard_small_widget;
+	foreach ( $google_analytics_master_custom_dashboard_small_widget as $widget_id => $options ) {
+		wp_add_dashboard_widget(
+			$widget_id,
+			$options['title'],
+			$options['callback']
+		);
+	}
+}
 //END CLASS
 }
 if ( is_admin() ){
 	add_action('admin_init', array('google_analytics_master', 'google_analytics_master_register'));
 	add_action('init', array('google_analytics_master', 'google_analytics_master_updater_version_check'));
 	add_action( 'in_plugin_update_message-' . plugin_basename(__FILE__), array('google_analytics_master', 'google_analytics_master_updater_message' ));
+	add_action( 'wp_dashboard_setup', array( 'google_analytics_master', 'google_analytics_master_add_dashboard_widget' ) );
 }
 add_filter('the_content', array('google_analytics_master', 'content_with_quote'));
 add_filter( 'plugin_action_links', array('google_analytics_master', 'google_analytics_master_links'), 10, 2 );
