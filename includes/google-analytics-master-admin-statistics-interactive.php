@@ -23,7 +23,7 @@ function google_analytics_master_admin_statistics_interactive(){
 <!DOCTYPE html>
 <meta charset="utf-8">
 <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400,300' rel='stylesheet'>
-<link rel="stylesheet" href="<?php echo plugins_url('assets/css/main.css', __FILE__); ?>">
+<link rel="stylesheet" href="<?php echo plugins_url('assets/css/main_google_analytics.css', __FILE__); ?>">
 
 <header class="Banner">
   <div class="Banner-auth" id="auth"></div>
