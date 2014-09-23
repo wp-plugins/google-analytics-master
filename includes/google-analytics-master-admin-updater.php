@@ -1,16 +1,7 @@
 <?php
-if( is_multisite() ) {
-	function menu_multi_google_analytics_admin_updater(){
-	// Create menu
+function menu_single_google_analytics_admin_updater(){
+	if ( is_admin() )
 	add_submenu_page( 'google-analytics-master', 'Updater', 'Updater', 'manage_options', 'google-analytics-master-admin-updater', 'google_analytics_master_admin_updater' );
-	}
-}
-else {
-	// Create menu
-	function menu_single_google_analytics_admin_updater(){
-		if ( is_admin() )
-		add_submenu_page( 'google-analytics-master', 'Updater', 'Updater', 'manage_options', 'google-analytics-master-admin-updater', 'google_analytics_master_admin_updater' );
-	}
 }
 
 function google_analytics_master_admin_updater(){
@@ -49,7 +40,8 @@ $wp_list_table->display();
 <?php
 }
 if( is_multisite() ) {
-add_action( 'network_admin_menu', 'menu_multi_google_analytics_admin_updater' );
+add_action( 'network_admin_menu', 'menu_single_google_analytics_admin_updater' );
+add_action( 'admin_menu', 'menu_single_google_analytics_admin_updater' );
 }
 else {
 add_action( 'admin_menu', 'menu_single_google_analytics_admin_updater' );

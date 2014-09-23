@@ -1,16 +1,8 @@
 <?php
-if( is_multisite() ) {
-	function menu_multi_google_analytics_admin_statistics_interactive(){
-	// Create menu
+// Create menu
+function menu_single_google_analytics_admin_statistics_interactive(){
+	if ( is_admin() )
 	add_submenu_page( 'google-analytics-master', 'Statistics Interactive', 'Statistics Interactive', 'manage_options', 'google-analytics-master-admin-statistics-interactive', 'google_analytics_master_admin_statistics_interactive' );
-	}
-}
-else {
-	// Create menu
-	function menu_single_google_analytics_admin_statistics_interactive(){
-		if ( is_admin() )
-		add_submenu_page( 'google-analytics-master', 'Statistics Interactive', 'Statistics Interactive', 'manage_options', 'google-analytics-master-admin-statistics-interactive', 'google_analytics_master_admin_statistics_interactive' );
-	}
 }
 
 function google_analytics_master_admin_statistics_interactive(){
@@ -230,7 +222,8 @@ gapi.analytics.ready(function() {
 }
 
 if( is_multisite() ) {
-add_action( 'network_admin_menu', 'menu_multi_google_analytics_admin_statistics_interactive' );
+add_action( 'network_admin_menu', 'menu_single_google_analytics_admin_statistics_interactive' );
+add_action( 'admin_menu', 'menu_single_google_analytics_admin_statistics_interactive' );
 }
 else {
 add_action( 'admin_menu', 'menu_single_google_analytics_admin_statistics_interactive' );

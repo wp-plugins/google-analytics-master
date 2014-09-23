@@ -1,16 +1,7 @@
 <?php
-if( is_multisite() ) {
-	function menu_multi_google_analytics_admin_statistics_quick(){
-	// Create menu
+function menu_single_google_analytics_admin_statistics_quick(){
+	if ( is_admin() )
 	add_submenu_page( 'google-analytics-master', 'Statistics Quick', 'Statistics Quick', 'manage_options', 'google-analytics-master-admin-statistics-quick', 'google_analytics_master_admin_statistics_quick' );
-	}
-}
-else {
-	// Create menu
-	function menu_single_google_analytics_admin_statistics_quick(){
-		if ( is_admin() )
-		add_submenu_page( 'google-analytics-master', 'Statistics Quick', 'Statistics Quick', 'manage_options', 'google-analytics-master-admin-statistics-quick', 'google_analytics_master_admin_statistics_quick' );
-	}
 }
 
 function google_analytics_master_admin_statistics_quick(){
@@ -447,7 +438,8 @@ function drawDeviceUsage(ids) {
 }
 
 if( is_multisite() ) {
-add_action( 'network_admin_menu', 'menu_multi_google_analytics_admin_statistics_quick' );
+add_action( 'network_admin_menu', 'menu_single_google_analytics_admin_statistics_quick' );
+add_action( 'admin_menu', 'menu_single_google_analytics_admin_statistics_quick' );
 }
 else {
 add_action( 'admin_menu', 'menu_single_google_analytics_admin_statistics_quick' );

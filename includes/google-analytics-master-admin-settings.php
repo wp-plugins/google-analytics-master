@@ -1,16 +1,8 @@
 <?php
-if( is_multisite() ) {
-	function menu_multi_google_analytics_admin_settings(){
-	// Create menu
+// Create menu
+function menu_single_google_analytics_admin_settings(){
+	if ( is_admin() )
 	add_submenu_page( 'google-analytics-master', 'Settings', 'Settings', 'manage_options', 'google-analytics-master-admin-settings', 'google_analytics_master_admin_settings' );
-	}
-}
-else {
-	// Create menu
-	function menu_single_google_analytics_admin_settings(){
-		if ( is_admin() )
-		add_submenu_page( 'google-analytics-master', 'Settings', 'Settings', 'manage_options', 'google-analytics-master-admin-settings', 'google_analytics_master_admin_settings' );
-	}
 }
 
 function google_analytics_master_admin_settings(){
@@ -46,7 +38,8 @@ $wp_list_table->display();
 }
 
 if( is_multisite() ) {
-add_action( 'network_admin_menu', 'menu_multi_google_analytics_admin_settings' );
+add_action( 'network_admin_menu', 'menu_single_google_analytics_admin_settings' );
+add_action( 'admin_menu', 'menu_single_google_analytics_admin_settings' );
 }
 else {
 add_action( 'admin_menu', 'menu_single_google_analytics_admin_settings' );

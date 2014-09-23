@@ -1,16 +1,8 @@
 <?php
-if( is_multisite() ) {
-	function menu_multi_google_analytics_admin_statistics_today(){
-	// Create menu
+// Create menu
+function menu_single_google_analytics_admin_statistics_today(){
+	if ( is_admin() )
 	add_submenu_page( 'google-analytics-master', 'Statistics Today', 'Statistics Today', 'manage_options', 'google-analytics-master-admin-statistics-today', 'google_analytics_master_admin_statistics_today' );
-	}
-}
-else {
-	// Create menu
-	function menu_single_google_analytics_admin_statistics_today(){
-		if ( is_admin() )
-		add_submenu_page( 'google-analytics-master', 'Statistics Today', 'Statistics Today', 'manage_options', 'google-analytics-master-admin-statistics-today', 'google_analytics_master_admin_statistics_today' );
-	}
 }
 
 function google_analytics_master_admin_statistics_today(){
@@ -232,7 +224,8 @@ gapi.analytics.ready(function() {
 }
 
 if( is_multisite() ) {
-add_action( 'network_admin_menu', 'menu_multi_google_analytics_admin_statistics_today' );
+add_action( 'network_admin_menu', 'menu_single_google_analytics_admin_statistics_today' );
+add_action( 'admin_menu', 'menu_single_google_analytics_admin_statistics_today' );
 }
 else {
 add_action( 'admin_menu', 'menu_single_google_analytics_admin_statistics_today' );

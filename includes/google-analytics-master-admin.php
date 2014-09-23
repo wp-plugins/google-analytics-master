@@ -1,23 +1,15 @@
 <?php
-if( is_multisite() ) {
-function menu_multi_google_analytics_master_admin(){
-// Create menu
-add_menu_page( 'Google Analytics Master', 'Google Analytics Master', 'manage_options', 'google-analytics-master', 'google_analytics_master_admin', plugins_url( 'google-analytics-master/images/techgasp-minilogo-16.png' ) );
-}
-}
-else {
 // Create menu
 function menu_single_google_analytics_master_admin(){
 if ( is_admin() )
 add_menu_page( 'Google Analytics Master', 'Google Analytics Master', 'manage_options', 'google-analytics-master', 'google_analytics_master_admin', plugins_url( 'google-analytics-master/images/techgasp-minilogo-16.png' ) );
 }
-}
-
 		///////////////////////
 		// WORDPRESS ACTIONS //
 		///////////////////////
 		if( is_multisite() ) {
-		add_action( 'network_admin_menu', 'menu_multi_google_analytics_master_admin' );
+		add_action( 'network_admin_menu', 'menu_single_google_analytics_master_admin' );
+		add_action( 'admin_menu', 'menu_single_google_analytics_master_admin' );
 		}
 		else {
 		add_action( 'admin_menu', 'menu_single_google_analytics_master_admin' );
