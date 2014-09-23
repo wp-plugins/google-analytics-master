@@ -2,7 +2,7 @@
 /**
 Plugin Name: Google Analytics Master
 Plugin URI: http://wordpress.techgasp.com/google-analytics-master/
-Version: 4.3.8.1
+Version: 4.3.8.2
 Author: TechGasp
 Author URI: http://wordpress.techgasp.com
 Text Domain: google-analytics-master
@@ -33,9 +33,9 @@ define( 'GOOGLE_ANALYTICS_MASTER_URL', plugin_dir_url( __FILE__ ) );
 ///////DEFINE ID//////
 define('GOOGLE_ANALYTICS_MASTER_ID', 'google-analytics-master');
 ///////DEFINE VERSION///////
-define( 'google_analytics_master_VERSION', '4.3.8.1' );
+define( 'google_analytics_master_VERSION', '4.3.8.2' );
 global $google_analytics_master_version, $google_analytics_master_name;
-$google_analytics_master_version = "4.3.8.1"; //for other pages
+$google_analytics_master_version = "4.3.8.2"; //for other pages
 $google_analytics_master_name = "Google Analytics Master"; //pretty name
 if( is_multisite() ) {
 update_site_option( 'google_analytics_master_installed_version', $google_analytics_master_version );
@@ -45,7 +45,6 @@ else{
 update_option( 'google_analytics_master_installed_version', $google_analytics_master_version );
 update_option( 'google_analytics_master_name', $google_analytics_master_name );
 }
-if( is_admin() ){
 // HOOK ADMIN
 require_once( dirname( __FILE__ ) . '/includes/google-analytics-master-admin.php');
 // HOOK ADMIN SETTINGS
@@ -62,7 +61,6 @@ require_once( dirname( __FILE__ ) . '/includes/google-analytics-master-admin-upd
 require_once( dirname( __FILE__ ) . '/includes/google-analytics-master-active.php');
 // HOOK DASHBOARD WIDGET SMALL
 require_once( dirname( __FILE__ ) . '/includes/google-analytics-master-widget-dashboard-small.php');
-}
 
 class google_analytics_master{
 //REGISTER PLUGIN
