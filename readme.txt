@@ -2,7 +2,7 @@
 Contributors: Techgasp
 Tags: wordpress, plugin, widget, shortcode, techgasp, google, analytic, analytics, google analytics, reports, monitor, statistic
 Requires at least: 3.5
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: 4.3.8.2
 License: GPLv2 or later
 
