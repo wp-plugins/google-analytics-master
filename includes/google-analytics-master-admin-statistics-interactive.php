@@ -222,7 +222,6 @@ gapi.analytics.ready(function() {
 }
 
 if( is_multisite() ) {
-add_action( 'network_admin_menu', 'menu_single_google_analytics_admin_statistics_interactive' );
 add_action( 'admin_menu', 'menu_single_google_analytics_admin_statistics_interactive' );
 }
 else {

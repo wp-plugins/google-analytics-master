@@ -1,10 +1,15 @@
 <?php
-$google_analytics_master_custom_dashboard_small_widget = array(
-	'google_analytics_master_dashboard_small_widget' => array(
-	'title' => 'Google Analytics Master Real-Time Visitors',
-	'callback' => 'google_analytics_master_dashboard_small_widget_content',
-	)
+add_action( 'wp_user_dashboard_setup', 'google_analytics_master_add_dashboard_widget' );
+add_action( 'wp_dashboard_setup', 'google_analytics_master_add_dashboard_widget' );
+
+function google_analytics_master_add_dashboard_widget() {
+$user = wp_get_current_user();
+wp_add_dashboard_widget(
+'google_analytics_master_dashboard_widget',
+__( 'Google Analytics Master Dashboard Widget' ),
+'google_analytics_master_dashboard_small_widget_content'
 );
+}
 
 function google_analytics_master_dashboard_small_widget_content() {
 ?>

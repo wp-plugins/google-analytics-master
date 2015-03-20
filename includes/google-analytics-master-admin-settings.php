@@ -38,7 +38,6 @@ $wp_list_table->display();
 }
 
 if( is_multisite() ) {
-add_action( 'network_admin_menu', 'menu_single_google_analytics_admin_settings' );
 add_action( 'admin_menu', 'menu_single_google_analytics_admin_settings' );
 }
 else {

@@ -42,7 +42,16 @@ $google_analytics_plugin_slug = 'google-analytics-master/google-analytics-master
 
 	<tbody>
 		<tr class="alternate">
-			<td class="column-columnname" width="350" style="vertical-align:middle"><h2><b><?php echo get_option( 'google_analytics_master_name' ); ?></b></h2></td>
+			<td class="column-columnname" width="350" style="vertical-align:middle"><h2><b>
+<?php
+if( is_multisite() ) {
+echo get_site_option( 'google_analytics_master_name' );
+}
+else{
+echo get_option( 'google_analytics_master_name' );
+}
+?>
+			</b></h2></td>
 			<td class="column-columnname" style="vertical-align:middle">
 <?php
 if( is_multisite() ) {
@@ -55,9 +64,12 @@ echo '<h3>Version '.get_option( 'google_analytics_master_installed_version' ).'<
 		</td>
 			<td class="column-columnname" style="vertical-align:middle">
 <?php
-
+if( is_multisite() ) {
+echo '<h3>Version '.get_site_option('google_analytics_master_newest_version').'</h3>';
+}
+else{
 echo '<h3>Version '.get_option('google_analytics_master_newest_version').'</h3>';
-
+}
 ?>
 			</td>
 			<td class="column-columnname" style="vertical-align:middle">

@@ -1,5 +1,4 @@
 <?php
-// Create menu
 function menu_single_google_analytics_master_admin(){
 if ( is_admin() )
 add_menu_page( 'Google Analytics Master', 'Google Analytics Master', 'manage_options', 'google-analytics-master', 'google_analytics_master_admin', plugins_url( 'google-analytics-master/images/techgasp-minilogo-16.png' ) );
@@ -55,7 +54,7 @@ $wp_list_table->display();
 
 <p>
 <a class="button-secondary" href="http://wordpress.techgasp.com" target="_blank" title="Visit Website">More TechGasp Plugins</a>
-<a class="button-secondary" href="http://wordpress.techgasp.com/support/" target="_blank" title="Facebook Page">TechGasp Support</a>
+<a class="button-secondary" href="http://wordpress.techgasp.com/support/" target="_blank" title="TechGasp Support">TechGasp Support</a>
 <a class="button-primary" href="http://wordpress.techgasp.com/google-analytics-master/" target="_blank" title="Visit Website"><?php echo get_option('google_analytics_master_name'); ?> Info</a>
 <a class="button-primary" href="http://wordpress.techgasp.com/google-analytics-master-documentation/" target="_blank" title="Visit Website"><?php echo get_option('google_analytics_master_name'); ?> Documentation</a>
 <a class="button-primary" href="http://wordpress.org/plugins/google-analytics-master/" target="_blank" title="Visit Website">RATE US *****</a>
